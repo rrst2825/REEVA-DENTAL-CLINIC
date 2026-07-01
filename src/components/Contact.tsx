@@ -131,43 +131,59 @@ export default function Contact() {
             </motion.div>
           </div>
 
-          {/* Right Side: Large Embedded map with glowing glass border (7 cols) */}
+          {/* Right Side: High-contrast Directions Card with ZERO embeds or previews (7 cols) */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 rounded-[2rem] border border-white/10 bg-slate-900 p-3 shadow-2xl flex flex-col min-h-[400px]"
+            className="lg:col-span-7 rounded-[2rem] border border-white/10 bg-slate-900 p-8 shadow-2xl flex flex-col justify-between text-left relative overflow-hidden"
           >
-            <div className="w-full flex-1 rounded-[1.5rem] overflow-hidden relative group">
-              {/* Google Maps Real Iframe */}
-              <iframe
-                title="Reeva Dental Clinic Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.4673323577717!2d72.8466175!3d21.133800699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be051d953ef8207%3A0xc0953ee618e7d235!2sSarvottam%20Restaurant!5e0!3m2!1sen!2sin!4v1782907000000!5m2!1sen!2sin"
-                className="absolute inset-0 w-full h-full border-0 rounded-[1.5rem] grayscale invert contrast-125 opacity-80 group-hover:grayscale-0 group-hover:invert-0 transition-all duration-700"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-              
-              {/* Interactive Hover Glow Ring */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-sky-400/20 rounded-[1.5rem] pointer-events-none transition-colors duration-500" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/10 rounded-full blur-2xl pointer-events-none" />
+
+            <div className="space-y-6 relative z-10">
+              <div className="flex items-center gap-2 text-sky-400">
+                <MapPin size={20} />
+                <h3 className="font-extrabold text-white text-lg">Location & Landmark Guide</h3>
+              </div>
+
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Reeva Dental Care is located in the bustling commercial zone of <strong className="text-white font-semibold">Udhana, Surat</strong>. Our modern facility is easily accessible from all primary transit points in the city.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/10">
+                  <div className="text-sky-400 font-mono text-xs font-bold mt-0.5">01</div>
+                  <div>
+                    <h4 className="text-xs font-extrabold text-white mb-0.5">Primary Landmark</h4>
+                    <p className="text-xs text-slate-400">Conveniently situated right at <strong className="text-slate-300">Tulsi Plaza</strong>, near the well-known Sarvottam Restaurant on S Zone Road.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/10">
+                  <div className="text-emerald-400 font-mono text-xs font-bold mt-0.5">02</div>
+                  <div>
+                    <h4 className="text-xs font-extrabold text-white mb-0.5">Parking Availability</h4>
+                    <p className="text-xs text-slate-400">Dedicated basement parking space is available for patient cars and two-wheelers inside Tulsi Plaza.</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Quick Map Action Button */}
-            <div className="mt-3 flex items-center justify-between px-2 text-xs">
-              <span className="text-white/40 flex items-center gap-1">
-                <ShieldCheck size={12} className="text-emerald-400" />
+            {/* Quick Map Action Link - clean text-only standard hyperlink */}
+            <div className="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs relative z-10">
+              <span className="text-slate-400 flex items-center gap-1.5 font-medium">
+                <ShieldCheck size={14} className="text-emerald-400" />
                 Verified Surat Coordinates
               </span>
               <a
                 href="https://maps.app.goo.gl/FkGjPr6A8Kj1kYWe9"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 font-semibold text-sky-400 hover:text-sky-300 transition-colors"
+                className="inline-flex items-center gap-1.5 font-bold text-sky-400 hover:text-sky-300 transition-colors text-sm hover:underline"
               >
-                Open in Google Maps
-                <ExternalLink size={11} />
+                Open driving directions in Google Maps
+                <ExternalLink size={14} />
               </a>
             </div>
           </motion.div>
