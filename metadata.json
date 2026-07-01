@@ -1,0 +1,6 @@
+{
+  "name": "Reeva Dental Clinic",
+  "description": "Premium Apple-inspired OS style website for Reeva Dental Clinic with fluid glassmorphic interfaces and intuitive booking systems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

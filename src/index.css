@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;850&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* Custom scroll bar variables for consistent macOS appearance */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.12);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.25);
+}
+
+/* Fluid responsive scrolling */
+html {
+  scroll-behavior: smooth;
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+body {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Immersive background decoration layers */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(to bottom right, #f0f7ff, #ffffff, #eef2ff);
+  opacity: 0.8;
+  z-index: -20;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(14, 165, 233, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(99, 102, 241, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.08) 0%, transparent 60%);
+  z-index: -19;
+  pointer-events: none;
+}
+
+/* ========================================== */
+/* REEVA DENTAL - FROSTED GLASS LIGHT THEME   */
+/* ========================================== */
+
+/* 1. SECTION & BACKGROUND TRANSITIONS */
+section {
+  background-color: transparent !important;
+  border-top-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+.bg-slate-950 {
+  background-color: #F8FAFC !important;
+}
+
+/* Main Light Frosted Glass Panels */
+.bg-slate-900\/20,
+.bg-slate-900\/30,
+.bg-slate-900\/35,
+.bg-slate-900\/40,
+.bg-slate-900\/50,
+.bg-slate-900\/60,
+.bg-slate-900\/80,
+.bg-slate-900 {
+  background-color: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 1px 1px 0 rgba(255, 255, 255, 0.8) inset !important;
+}
+
+/* Light background segment panels */
+.bg-white\/5 {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.hover\:bg-white\/10:hover {
+  background-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.bg-white\/10 {
+  background-color: rgba(15, 23, 42, 0.06) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+/* 2. TRANSLUCENT MENU BAR & FOOTER STYLING */
+.fixed.top-0.bg-slate-950\/45 {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 4px 20px -5px rgba(15, 23, 42, 0.04) !important;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 3. BORDERS OVERRIDES (Surgical match for glass borders) */
+.border-white\/5,
+.border-white\/10,
+.border-white\/15,
+.border-white\/20 {
+  border-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* 4. TEXT COLOR TRANSITION ENGINE */
+.text-white,
+.text-white\/90,
+.text-white\/95 {
+  color: #0F172A !important;
+}
+
+.text-slate-400,
+.text-slate-300,
+.text-white\/80,
+.text-white\/70,
+.text-white\/60,
+.text-white\/50 {
+  color: #475569 !important; /* slate-600 */
+}
+
+.text-white\/40,
+.text-white\/30,
+.text-slate-500 {
+  color: #64748B !important; /* slate-500 */
+}
+
+/* 5. RESTORE CONTRAST ON SOLID ACTIONS & ACTIVE BADGES */
+button.bg-gradient-to-r,
+button.bg-gradient-to-r *,
+button.bg-sky-500,
+button.bg-sky-500 *,
+button.bg-sky-600,
+button.bg-sky-600 *,
+button.bg-[#0F172A],
+button.bg-[#0F172A] *,
+button.bg-[#0EA5E9],
+button.bg-[#0EA5E9] *,
+button.bg-emerald-500,
+button.bg-emerald-500 *,
+button.bg-emerald-600,
+button.bg-emerald-600 *,
+button.bg-rose-500,
+button.bg-rose-500 *,
+a.bg-gradient-to-r,
+a.bg-gradient-to-r * {
+  color: #ffffff !important;
+}
+
+/* Exceptions for clear active/hover tags */
+.text-sky-400 {
+  color: #0EA5E9 !important;
+}
+
+/* Accent pills & badges bg inside light panels */
+.bg-sky-500\/10 {
+  background-color: rgba(14, 165, 233, 0.1) !important;
+}
+.bg-sky-500\/15 {
+  background-color: rgba(14, 165, 233, 0.15) !important;
+}
+.bg-sky-500\/25 {
+  background-color: rgba(14, 165, 233, 0.2) !important;
+}
+.bg-emerald-500\/10,
+.bg-emerald-500\/15 {
+  background-color: rgba(16, 185, 129, 0.1) !important;
+}
+.bg-amber-500\/10 {
+  background-color: rgba(245, 158, 11, 0.1) !important;
+}
+
+/* 6. INPUT CONTROLS FOR BOOKING PORTAL */
+input, select, textarea {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  color: #0F172A !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #0EA5E9 !important;
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.15) !important;
+}
+
+input::placeholder, select::placeholder, textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* 7. IFRAMES (Google Maps Inversion Bypass) */
+iframe {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
